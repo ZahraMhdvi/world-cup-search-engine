@@ -1,8 +1,8 @@
 
 import math
 from typing import List, Dict, Set, Tuple
-from dataPreprocessing.preprocessor import preprocess
-from indexing.index_builder import InvertedIndex
+from DataPreprocessing.preprocessor import preprocess
+from Indexing.index_builder import InvertedIndex
 
 
 def compute_tf_weight(tf: int) -> float:
