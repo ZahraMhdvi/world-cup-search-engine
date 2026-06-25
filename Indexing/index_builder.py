@@ -1,4 +1,3 @@
-
 import math
 from collections import defaultdict
 from typing import List, Dict, Tuple
@@ -6,7 +5,6 @@ from DataPreprocessing.preprocessor import preprocess
 
 
 class InvertedIndex:
-
 
     def __init__(self):
         self.index: Dict[str, Dict[int, Dict]] = defaultdict(dict)
@@ -35,11 +33,11 @@ class InvertedIndex:
             for field, value in fields.items():
                 if isinstance(value, list):
                     for v in value:
-                        norm_v = v.lower().strip()
+                        norm_v = " ".join(str(v).lower().split())
                         if norm_v:
                             self.field_index[field][norm_v].append(doc_id)
                 else:
-                    norm_v = str(value).lower().strip()
+                    norm_v = " ".join(str(value).lower().split())
                     if norm_v:
                         self.field_index[field][norm_v].append(doc_id)
 
@@ -48,10 +46,9 @@ class InvertedIndex:
         self.documents = documents
         for doc in documents:
             self.add_document(doc['doc_id'], doc['text'], doc.get('fields'))
-        print(f"[نمایه] {self.total_docs} سند با {len(self.index)} ترم منحصربه‌فرد نمایه‌سازی شدند.")
+        print(f"[Index] Indexed {self.total_docs} documents with {len(self.index)} unique terms.")
 
     def get_postings(self, term: str) -> Dict[int, Dict]:
-
         normalized = preprocess(term, apply_stop_words=False)
         if not normalized:
             return {}
@@ -61,9 +58,7 @@ class InvertedIndex:
         return set(self.get_postings(term).keys())
 
     def idf(self, term: str) -> float:
-
-        from DataPreprocessing.preprocessor import preprocess as pp
-        normalized = pp(term, apply_stop_words=False)
+        normalized = preprocess(term, apply_stop_words=False)
         if not normalized:
             return 0.0
         t = normalized[0]
@@ -73,24 +68,21 @@ class InvertedIndex:
         return math.log((self.total_docs + 1) / (df + 1)) + 1
 
     def tf(self, term: str, doc_id: int) -> int:
-        from DataPreprocessing.preprocessor import preprocess as pp
-        normalized = pp(term, apply_stop_words=False)
+        normalized = preprocess(term, apply_stop_words=False)
         if not normalized:
             return 0
         t = normalized[0]
         return self.index.get(t, {}).get(doc_id, {}).get('tf', 0)
 
     def get_positions(self, term: str, doc_id: int) -> List[int]:
-        from DataPreprocessing.preprocessor import preprocess as pp
-        normalized = pp(term, apply_stop_words=False)
+        normalized = preprocess(term, apply_stop_words=False)
         if not normalized:
             return []
         t = normalized[0]
         return self.index.get(t, {}).get(doc_id, {}).get('positions', [])
 
     def get_field_docs(self, field: str, value: str) -> set:
-
-        norm_value = value.lower().strip()
+        norm_value = " ".join(str(value).lower().split())
         results = set()
         field_dict = self.field_index.get(field, {})
         for key, doc_ids in field_dict.items():
@@ -110,13 +102,12 @@ class InvertedIndex:
         }
 
     def find_phrase(self, phrase_terms: List[str], doc_id: int) -> bool:
-
         if not phrase_terms:
             return False
-        from DataPreprocessing.preprocessor import preprocess as pp
+
         norm_terms = []
         for t in phrase_terms:
-            n = pp(t, apply_stop_words=False)
+            n = preprocess(t, apply_stop_words=False)
             if n:
                 norm_terms.append(n[0])
         if not norm_terms:

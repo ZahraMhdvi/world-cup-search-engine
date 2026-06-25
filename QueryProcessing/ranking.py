@@ -1,4 +1,3 @@
-
 import math
 from typing import List, Dict, Set, Tuple
 from DataPreprocessing.preprocessor import preprocess
@@ -6,7 +5,6 @@ from Indexing.index_builder import InvertedIndex
 
 
 def compute_tf_weight(tf: int) -> float:
-
     if tf == 0:
         return 0.0
     return 1.0 + math.log(tf)
@@ -18,7 +16,6 @@ def compute_tfidf_score(
     index: InvertedIndex,
     use_cosine_norm: bool = True
 ) -> float:
-
     score = 0.0
     for term in query_terms:
         normalized = preprocess(term, apply_stop_words=False)
@@ -43,7 +40,6 @@ def compute_phrase_boost(
     index: InvertedIndex,
     boost_factor: float = 2.0
 ) -> float:
-
     total_boost = 0.0
     for phrase in phrases:
         phrase_tokens = preprocess(phrase, apply_stop_words=False)
@@ -58,7 +54,6 @@ def rank_documents(
     index: InvertedIndex,
     top_k: int = 10
 ) -> List[Tuple[int, float, dict]]:
-
     if not candidate_doc_ids:
         return []
 
@@ -80,7 +75,6 @@ def rank_documents(
             continue
 
         tfidf_score = compute_tfidf_score(all_query_terms, doc_id, index)
-
         phrase_boost = compute_phrase_boost(
             query_info.get('phrases', []), doc_id, index
         )
@@ -96,31 +90,31 @@ def format_results(
     ranked_results: List[Tuple[int, float, dict]],
     query: str
 ) -> str:
-
+    query_clean = " ".join(query.split())
     if not ranked_results:
-        return f"\nجستجو برای «{query}» نتیجه‌ای نداشت.\n"
+        return f"\nSearch for '{query_clean}' returned 0 results.\n"
 
     lines = []
-    lines.append(f"\nنتایج جستجو برای: «{query}»")
-    lines.append(f"تعداد نتایج: {len(ranked_results)}")
+    lines.append(f"Search Results for: '{query_clean}'")
+    lines.append(f"Total Retrieved Results: {len(ranked_results)}")
     lines.append("=" * 60)
 
     for rank, (doc_id, score, doc_info) in enumerate(ranked_results, start=1):
-        home = doc_info.get('home_team', '')
-        away = doc_info.get('away_team', '')
-        stage = doc_info.get('stage', '')
-        score_str = doc_info.get('score', '')
-        venue = doc_info.get('venue', '')
-        referee = doc_info.get('referee', '')
-        notes = doc_info.get('notes', '')
+        home = " ".join(str(doc_info.get('home_team', '')).split())
+        away = " ".join(str(doc_info.get('away_team', '')).split())
+        stage = " ".join(str(doc_info.get('stage', '')).split())
+        score_str = " ".join(str(doc_info.get('score', '')).split())
+        venue = " ".join(str(doc_info.get('venue', '')).split())
+        referee = " ".join(str(doc_info.get('referee', '')).split())
+        notes = " ".join(str(doc_info.get('notes', '')).split())
 
-        lines.append(f"\nرتبه {rank} | DocID: {doc_id} | امتیاز: {score:.4f}")
-        lines.append(f"  مسابقه: {home} vs {away}")
-        lines.append(f"  مرحله: {stage}  |  نتیجه: {score_str}")
-        lines.append(f"  ورزشگاه: {venue}")
-        lines.append(f"  داور: {referee}")
-        if notes and notes != 'nan':
-            lines.append(f"  یادداشت: {notes}")
+        lines.append(f"Rank {rank} | DocID: {doc_id} | Score: {score:.4f}")
+        lines.append(f"  Match: {home} vs {away}")
+        lines.append(f"  Stage: {stage} | Score: {score_str}")
+        lines.append(f"  Stadium/Venue: {venue}")
+        lines.append(f"  Referee: {referee}")
+        if notes and notes.lower() != 'nan':
+            lines.append(f"  Notes: {notes}")
         lines.append("-" * 60)
 
     return '\n'.join(lines)

@@ -1,5 +1,3 @@
-
-
 import os
 import sys
 import json
@@ -14,51 +12,54 @@ from Evaluation.evaluator import (
     RELEVANCE_JUDGMENTS,
 )
 
-
 OUTPUT_DIR = "output"
 DATA_PATH = "Evaluation/matches_1930_2022.csv"
 
 
+def clean_spaces(text: str) -> str:
+    return " ".join(text.split())
+
+
 def build_system(data_path: str, year: int = 2022):
-
-    print("\n[۱] بارگذاری دیتاست جام جهانی...")
+    print(clean_spaces("\n[1] Loading World Cup dataset..."))
     df = load_dataset(data_path, year=year)
-    print(f"    تعداد مسابقات: {len(df)} مسابقه از جام جهانی {year}")
+    print(clean_spaces(f" Total Matches: {len(df)} matches loaded from World Cup {year}"))
 
-    print("\n[۲] ساخت اسناد از رکوردهای مسابقات...")
+    print(clean_spaces("\n[2] Building documents from match records..."))
     documents = build_all_documents(df)
-    print(f"    {len(documents)} سند ساخته شد.")
+    print(clean_spaces(f" {len(documents)} documents successfully constructed."))
 
-    print("\n[۳] ساخت نمایه وارونه...")
+    print(clean_spaces("\n[3] Constructing Inverted Index..."))
     index = InvertedIndex()
     index.build(documents)
 
     stats = index.get_vocabulary_stats()
-    print(f"    واژگان منحصربه‌فرد: {stats['vocabulary_size']}")
-    print(f"    کل پستینگ‌ها: {stats['total_postings']}")
-    print(f"    میانگین طول سند: {stats['avg_doc_length']:.1f} توکن")
+    print(clean_spaces(f" Unique Terms (Vocabulary Size): {stats['vocabulary_size']}"))
+    print(clean_spaces(f" Total Postings: {stats['total_postings']}"))
+    print(clean_spaces(f" Average Document Length: {stats['avg_doc_length']:.1f} tokens"))
 
     return index, documents, df
 
 
 def search(query: str, index: InvertedIndex, top_k: int = 10):
-
+    query = clean_spaces(query)
     candidate_docs, query_info = process_query(query, index)
     ranked = rank_documents(candidate_docs, query_info, index, top_k=top_k)
     output = format_results(ranked, query)
-    print(output)
+    # Splitting and joining lines to ensure format_results has no weird extra lines or spaces
+    clean_output = "\n".join(clean_spaces(line) for line in output.splitlines())
+    print(clean_output)
     return ranked
 
 
 def search_for_eval(query: str, index: InvertedIndex, top_k: int = 10) -> list:
-
+    query = clean_spaces(query)
     candidate_docs, query_info = process_query(query, index)
     ranked = rank_documents(candidate_docs, query_info, index, top_k=top_k)
     return [doc_id for doc_id, _, _ in ranked]
 
 
 def run_sample_queries(index: InvertedIndex):
-
     sample_queries = [
         "messi",
         "mbappe goal",
@@ -73,7 +74,6 @@ def run_sample_queries(index: InvertedIndex):
         "penalty miss",
         "red card",
         "0-0 draw",
-
         "mbappe AND goal",
         "penalty AND quarter-finals",
         "messi AND NOT penalty",
@@ -90,14 +90,16 @@ def run_sample_queries(index: InvertedIndex):
 
     results_log = []
     print("\n" + "=" * 70)
-    print("         اجرای پرس‌وجوهای نمونه")
+    print(clean_spaces(" Executing Sample Benchmark Queries "))
     print("=" * 70)
 
     for query in sample_queries:
+        query = clean_spaces(query)
         candidate_docs, query_info = process_query(query, index)
         ranked = rank_documents(candidate_docs, query_info, index, top_k=5)
         output = format_results(ranked, query)
-        print(output)
+        clean_output = "\n".join(clean_spaces(line) for line in output.splitlines())
+        print(clean_output)
 
         results_log.append({
             'query': query,
@@ -107,9 +109,9 @@ def run_sample_queries(index: InvertedIndex):
                     'rank': i + 1,
                     'doc_id': doc_id,
                     'score': round(score, 4),
-                    'match': f"{info['home_team']} vs {info['away_team']}",
-                    'stage': info['stage'],
-                    'result': info['score'],
+                    'match': clean_spaces(f"{info['home_team']} vs {info['away_team']}"),
+                    'stage': clean_spaces(info['stage']),
+                    'result': clean_spaces(str(info['score'])),
                 }
                 for i, (doc_id, score, info) in enumerate(ranked)
             ]
@@ -119,9 +121,8 @@ def run_sample_queries(index: InvertedIndex):
 
 
 def run_evaluation(index: InvertedIndex):
-
     print("\n" + "=" * 70)
-    print("               ارزیابی سامانه")
+    print(clean_spaces(" Evaluating System Performance "))
     print("=" * 70)
 
     def search_fn(query, top_k=10):
@@ -129,7 +130,8 @@ def run_evaluation(index: InvertedIndex):
 
     eval_results = evaluate_system(search_fn, RELEVANCE_JUDGMENTS, top_k=10)
     report = format_evaluation_report(eval_results)
-    print(report)
+    clean_report = "\n".join(clean_spaces(line) for line in report.splitlines())
+    print(clean_report)
     return eval_results, report
 
 
@@ -144,11 +146,10 @@ def save_index_info(index: InvertedIndex, output_dir: str):
     index_summary = {
         'stats': stats,
         'top_50_terms': [
-            {'term': t, 'doc_freq': df} for t, df in sorted_terms
+            {'term': clean_spaces(t), 'doc_freq': df} for t, df in sorted_terms
         ],
         'sample_postings': {}
     }
-
 
     sample_terms = ['messi', 'goal', 'penalty', 'referee', 'final']
     for term in sample_terms:
@@ -161,7 +162,7 @@ def save_index_info(index: InvertedIndex, output_dir: str):
     path = os.path.join(output_dir, 'index_summary.json')
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(index_summary, f, ensure_ascii=False, indent=2)
-    print(f"\n[نمایه] اطلاعات نمایه در {path} ذخیره شد.")
+    print(clean_spaces(f"\n[Index] Index analytics metadata exported to {path}"))
 
 
 def save_documents(documents: list, output_dir: str):
@@ -170,44 +171,45 @@ def save_documents(documents: list, output_dir: str):
     save_docs = [
         {
             'doc_id': d['doc_id'],
-            'home_team': d['home_team'],
-            'away_team': d['away_team'],
-            'stage': d['stage'],
-            'date': d['date'],
-            'score': d['score'],
-            'venue': d['venue'],
-            'referee': d['referee'],
-            'text_preview': d['text'][:300] + '...' if len(d['text']) > 300 else d['text'],
+            'home_team': clean_spaces(d['home_team']),
+            'away_team': clean_spaces(d['away_team']),
+            'stage': clean_spaces(d['stage']),
+            'date': clean_spaces(d['date']),
+            'score': clean_spaces(d['score']),
+            'venue': clean_spaces(d['venue']),
+            'referee': clean_spaces(d['referee']),
+            'text_preview': clean_spaces(d['text'][:300]) + '...' if len(d['text']) > 300 else clean_spaces(d['text']),
         }
         for d in documents
     ]
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(save_docs, f, ensure_ascii=False, indent=2)
-    print(f"[اسناد] اسناد در {path} ذخیره شدند.")
+    print(clean_spaces(f"[Documents] Processed documents collection saved to {path}"))
 
 
 def interactive_mode(index: InvertedIndex):
     print("\n" + "=" * 70)
-    print("         حالت تعاملی - برای خروج 'exit' تایپ کنید")
+    print(clean_spaces(" Interactive Mode Enabled - Type 'exit' to quit "))
     print("=" * 70)
-    print("راهنما:")
-    print("  جستجوی ساده  : messi goal")
-    print("  بولی         : mbappe AND goal | penalty AND NOT shootout")
-    print("  عبارت         : \"extra time goal\"")
-    print("  فیلد-محور    : team:Argentina round:Final")
+    print("Query Syntax Examples:")
+    print(clean_spaces(" Free-text Keyword Search : messi goal"))
+    print(clean_spaces(" Boolean Constraints : mbappe AND goal | penalty AND NOT shootout"))
+    print(clean_spaces(" Exact Phrase Search : \"extra time goal\""))
+    print(clean_spaces(" Field-specific Filters : team:Argentina round:Final"))
     print("-" * 70)
 
     while True:
         try:
-            query = input("\nپرس‌وجو: ").strip()
+            query = input("\nSearch Query: ").strip()
             if not query:
                 continue
-            if query.lower() in ('exit', 'quit', 'خروج'):
-                print("خروج از سامانه.")
+            query = clean_spaces(query)
+            if query.lower() in ('exit', 'quit'):
+                print(clean_spaces("Exiting search engine platform."))
                 break
             search(query, index, top_k=10)
         except (KeyboardInterrupt, EOFError):
-            print("\nخروج از سامانه.")
+            print(clean_spaces("\nExiting search engine platform."))
             break
 
 
@@ -221,12 +223,13 @@ def main():
     results_path = os.path.join(OUTPUT_DIR, 'sample_query_results.json')
     with open(results_path, 'w', encoding='utf-8') as f:
         json.dump(results_log, f, ensure_ascii=False, indent=2)
-    print(f"\n[خروجی] نتایج نمونه در {results_path} ذخیره شدند.")
+    print(clean_spaces(f"\nTest execution query outcomes recorded in {results_path}"))
+
     eval_results, report = run_evaluation(index)
     report_path = os.path.join(OUTPUT_DIR, 'evaluation_report.txt')
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write(report)
-    print(f"\n[ارزیابی] گزارش ارزیابی در {report_path} ذخیره شد.")
+    print(clean_spaces(f"\nPerformance metric report successfully generated at {report_path}"))
 
     eval_json_path = os.path.join(OUTPUT_DIR, 'evaluation_metrics.json')
     eval_save = {
@@ -237,7 +240,8 @@ def main():
         'MAP': eval_results['MAP'],
         'MRR': eval_results['MRR'],
         'per_query': [
-            {k: v for k, v in m.items()} for m in eval_results['per_query']
+            {k: clean_spaces(str(v)) if isinstance(v, str) else v for k, v in m.items()}
+            for m in eval_results['per_query']
         ]
     }
     with open(eval_json_path, 'w', encoding='utf-8') as f:

@@ -1,8 +1,5 @@
-
 import math
 from typing import List, Set, Dict, Tuple
-
-
 
 RELEVANCE_JUDGMENTS: Dict[str, List[int]] = {
     "messi": [1, 4, 8, 16, 28, 44, 57],
@@ -23,27 +20,25 @@ RELEVANCE_JUDGMENTS: Dict[str, List[int]] = {
 }
 
 QUERY_DESCRIPTIONS = {
-    "messi": "مسابقاتی که مسی در آن‌ها حضور داشت",
-    "mbappe goal": "مسابقاتی که امباپه گل زد",
-    "final penalty": "مسابقه فینال که به پنالتی کشیده شد",
-    "own goal": "مسابقاتی که گل به خودی داشتند",
-    "extra time goal": "مسابقاتی که گل در وقت اضافه زده شد",
-    "yellow cards argentina": "مسابقات آرژانتین با کارت زرد",
-    "substitutions france": "مسابقات فرانسه با تعویض",
-    "matches in lusail": "مسابقات در استادیوم لوسیل",
-    "referee marciniak": "مسابقاتی که مارکینیاک داور بود",
-    "captain luka modric": "مسابقاتی که لوکا مودریچ کاپیتان بود",
-    "penalty miss": "مسابقاتی که پنالتی از دست رفت",
-    "red card": "مسابقاتی با کارت قرمز",
-    "0-0 draw": "مسابقاتی که با تساوی 0-0 تمام شدند",
-    'team:Portugal player:Goncalo Ramos': "مسابقات پرتغال با گونسالو راموس",
-    'round:Semi-finals team:Morocco': "مسابقات نیمه‌نهایی مراکش",
+    "messi": "Matches featuring Lionel Messi",
+    "mbappe goal": "Matches where Kylian Mbappe scored a goal",
+    "final penalty": "Final match decided by penalty shootout",
+    "own goal": "Matches with own goals recorded",
+    "extra time goal": "Matches with goals scored during extra time",
+    "yellow cards argentina": "Matches where Argentina received yellow cards",
+    "substitutions france": "Matches where France made substitutions",
+    "matches in lusail": "Matches played at Lusail Stadium",
+    "referee marciniak": "Matches officiated by referee Szymon Marciniak",
+    "captain luka modric": "Matches with Luka Modric playing as captain",
+    "penalty miss": "Matches with missed penalty kicks",
+    "red card": "Matches with red cards issued",
+    "0-0 draw": "Matches ending in a scoreless 0-0 draw",
+    'team:Portugal player:Goncalo Ramos': "Matches with Goncalo Ramos playing for Portugal",
+    'round:Semi-finals team:Morocco': "Semi-final matches featuring Morocco",
 }
 
 
-
 def precision(retrieved: List[int], relevant: Set[int]) -> float:
-
     if not retrieved:
         return 0.0
     relevant_retrieved = sum(1 for doc_id in retrieved if doc_id in relevant)
@@ -51,7 +46,6 @@ def precision(retrieved: List[int], relevant: Set[int]) -> float:
 
 
 def recall(retrieved: List[int], relevant: Set[int]) -> float:
-
     if not relevant:
         return 0.0
     relevant_retrieved = sum(1 for doc_id in retrieved if doc_id in relevant)
@@ -59,20 +53,17 @@ def recall(retrieved: List[int], relevant: Set[int]) -> float:
 
 
 def f1_score(prec: float, rec: float) -> float:
-
     if prec + rec == 0:
         return 0.0
     return 2 * prec * rec / (prec + rec)
 
 
 def precision_at_k(retrieved: List[int], relevant: Set[int], k: int) -> float:
-
     top_k = retrieved[:k]
     return precision(top_k, relevant)
 
 
 def average_precision(retrieved: List[int], relevant: Set[int]) -> float:
-
     if not relevant or not retrieved:
         return 0.0
 
@@ -88,7 +79,6 @@ def average_precision(retrieved: List[int], relevant: Set[int]) -> float:
 
 def mean_average_precision(results_per_query: Dict[str, List[int]],
                            judgments: Dict[str, List[int]]) -> float:
-
     aps = []
     for query, retrieved in results_per_query.items():
         relevant = set(judgments.get(query, []))
@@ -100,7 +90,6 @@ def mean_average_precision(results_per_query: Dict[str, List[int]],
 
 
 def reciprocal_rank(retrieved: List[int], relevant: Set[int]) -> float:
-
     for i, doc_id in enumerate(retrieved, start=1):
         if doc_id in relevant:
             return 1.0 / i
@@ -112,7 +101,6 @@ def evaluate_system(
     judgments: Dict[str, List[int]] = None,
     top_k: int = 10
 ) -> dict:
-
     if judgments is None:
         judgments = RELEVANCE_JUDGMENTS
 
@@ -165,13 +153,12 @@ def evaluate_system(
 
 
 def format_evaluation_report(eval_results: dict) -> str:
-
     lines = []
     lines.append("=" * 70)
-    lines.append("            گزارش ارزیابی سامانه بازیابی اطلاعات جام جهانی")
+    lines.append("        Information Retrieval System Evaluation Report")
     lines.append("=" * 70)
-    lines.append(f"\nتعداد پرس‌وجوهای ارزیابی: {eval_results['num_queries']}")
-    lines.append("\n--- معیارهای کلی سامانه ---")
+    lines.append(f"\nEvaluation Benchmark Queries Size: {eval_results['num_queries']}")
+    lines.append("\n--- Global System Performance Overview ---")
     lines.append(f"  Mean Precision       : {eval_results['mean_precision']:.4f}  ({eval_results['mean_precision']*100:.1f}%)")
     lines.append(f"  Mean Recall          : {eval_results['mean_recall']:.4f}  ({eval_results['mean_recall']*100:.1f}%)")
     lines.append(f"  Mean F1-Score        : {eval_results['mean_f1']:.4f}")
@@ -179,9 +166,9 @@ def format_evaluation_report(eval_results: dict) -> str:
     lines.append(f"  MAP (Mean Avg Prec)  : {eval_results['MAP']:.4f}")
     lines.append(f"  MRR (Mean Recip Rank): {eval_results['MRR']:.4f}")
     lines.append("\n" + "-" * 70)
-    lines.append("--- نتایج ارزیابی به تفکیک پرس‌وجو ---\n")
+    lines.append("--- Detailed Query Metrics Breakdown ---\n")
 
-    header = f"{'#':<3} {'پرس‌وجو':<35} {'P':<7} {'R':<7} {'F1':<7} {'AP':<7} {'P@5':<6}"
+    header = f"{'#':<3} {'Query':<35} {'P':<7} {'R':<7} {'F1':<7} {'AP':<7} {'P@5':<6}"
     lines.append(header)
     lines.append("-" * 70)
 
@@ -193,10 +180,10 @@ def format_evaluation_report(eval_results: dict) -> str:
             f"{m['f1']:<7.3f} {m['ap']:<7.3f} {m['p@5']:<6.3f}"
         )
         lines.append(row)
-        lines.append(f"     توضیح: {m['description']}")
+        lines.append(f"     Description: {m['description']}")
         lines.append(
-            f"     مرتبط: {m['relevant_count']}  |  بازیابی‌شده: {m['retrieved_count']}"
-            f"  |  مرتبط بازیابی‌شده: {m['relevant_retrieved']}"
+            f"     Relevant Count: {m['relevant_count']}  |  Retrieved Count: {m['retrieved_count']}"
+            f"  |  Relevant Retrieved: {m['relevant_retrieved']}"
         )
         lines.append("")
 
