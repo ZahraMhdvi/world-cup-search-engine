@@ -1,0 +1,396 @@
+{
+  "stats": {
+    "total_docs": 64,
+    "vocabulary_size": 1466,
+    "total_postings": 6459,
+    "avg_doc_length": 158.78125
+  },
+  "top_50_terms": [
+    {
+      "term": "vs",
+      "doc_freq": 64
+    },
+    {
+      "term": "round",
+      "doc_freq": 64
+    },
+    {
+      "term": "stage",
+      "doc_freq": 64
+    },
+    {
+      "term": "venue",
+      "doc_freq": 64
+    },
+    {
+      "term": "stadium",
+      "doc_freq": 64
+    },
+    {
+      "term": "date",
+      "doc_freq": 64
+    },
+    {
+      "term": "2022",
+      "doc_freq": 64
+    },
+    {
+      "term": "year",
+      "doc_freq": 64
+    },
+    {
+      "term": "host",
+      "doc_freq": 64
+    },
+    {
+      "term": "qatar",
+      "doc_freq": 64
+    },
+    {
+      "term": "score",
+      "doc_freq": 64
+    },
+    {
+      "term": "manager",
+      "doc_freq": 64
+    },
+    {
+      "term": "coach",
+      "doc_freq": 64
+    },
+    {
+      "term": "captain",
+      "doc_freq": 64
+    },
+    {
+      "term": "referee",
+      "doc_freq": 64
+    },
+    {
+      "term": "var",
+      "doc_freq": 64
+    },
+    {
+      "term": "goal",
+      "doc_freq": 64
+    },
+    {
+      "term": "substitution",
+      "doc_freq": 64
+    },
+    {
+      "term": "substitute",
+      "doc_freq": 64
+    },
+    {
+      "term": "xg",
+      "doc_freq": 64
+    },
+    {
+      "term": "expected",
+      "doc_freq": 64
+    },
+    {
+      "term": "attendance",
+      "doc_freq": 64
+    },
+    {
+      "term": "yellow",
+      "doc_freq": 62
+    },
+    {
+      "term": "card",
+      "doc_freq": 62
+    },
+    {
+      "term": "scorer",
+      "doc_freq": 57
+    },
+    {
+      "term": "group",
+      "doc_freq": 48
+    },
+    {
+      "term": "11",
+      "doc_freq": 43
+    },
+    {
+      "term": "90",
+      "doc_freq": 42
+    },
+    {
+      "term": "al",
+      "doc_freq": 38
+    },
+    {
+      "term": "46",
+      "doc_freq": 33
+    },
+    {
+      "term": "12",
+      "doc_freq": 28
+    },
+    {
+      "term": "penalty",
+      "doc_freq": 23
+    },
+    {
+      "term": "doha",
+      "doc_freq": 23
+    },
+    {
+      "term": "66",
+      "doc_freq": 19
+    },
+    {
+      "term": "64",
+      "doc_freq": 18
+    },
+    {
+      "term": "78",
+      "doc_freq": 18
+    },
+    {
+      "term": "82",
+      "doc_freq": 18
+    },
+    {
+      "term": "77",
+      "doc_freq": 18
+    },
+    {
+      "term": "ali",
+      "doc_freq": 18
+    },
+    {
+      "term": "81",
+      "doc_freq": 17
+    },
+    {
+      "term": "45",
+      "doc_freq": 16
+    },
+    {
+      "term": "79",
+      "doc_freq": 16
+    },
+    {
+      "term": "74",
+      "doc_freq": 16
+    },
+    {
+      "term": "75",
+      "doc_freq": 16
+    },
+    {
+      "term": "draw",
+      "doc_freq": 15
+    },
+    {
+      "term": "tied",
+      "doc_freq": 15
+    },
+    {
+      "term": "equal",
+      "doc_freq": 15
+    },
+    {
+      "term": "87",
+      "doc_freq": 15
+    },
+    {
+      "term": "68",
+      "doc_freq": 15
+    },
+    {
+      "term": "72",
+      "doc_freq": 15
+    }
+  ],
+  "sample_postings": {
+    "messi": {
+      "1": {
+        "tf": 5,
+        "positions": [
+          46,
+          65,
+          79,
+          90,
+          102
+        ]
+      },
+      "4": {
+        "tf": 3,
+        "positions": [
+          38,
+          66,
+          70
+        ]
+      },
+      "8": {
+        "tf": 5,
+        "positions": [
+          54,
+          90,
+          94,
+          107,
+          176
+        ]
+      },
+      "16": {
+        "tf": 3,
+        "positions": [
+          41,
+          57,
+          64
+        ]
+      },
+      "28": {
+        "tf": 2,
+        "positions": [
+          41,
+          75
+        ]
+      }
+    },
+    "goal": {
+      "1": {
+        "tf": 7,
+        "positions": [
+          59,
+          68,
+          80,
+          88,
+          92
+        ]
+      },
+      "2": {
+        "tf": 5,
+        "positions": [
+          55,
+          63,
+          74,
+          142,
+          146
+        ]
+      },
+      "3": {
+        "tf": 4,
+        "positions": [
+          53,
+          60,
+          120,
+          124
+        ]
+      },
+      "4": {
+        "tf": 5,
+        "positions": [
+          51,
+          57,
+          68,
+          149,
+          153
+        ]
+      },
+      "5": {
+        "tf": 4,
+        "positions": [
+          51,
+          56,
+          143,
+          147
+        ]
+      }
+    },
+    "penalty": {
+      "1": {
+        "tf": 5,
+        "positions": [
+          29,
+          87,
+          91,
+          97,
+          99
+        ]
+      },
+      "4": {
+        "tf": 1,
+        "positions": [
+          67
+        ]
+      },
+      "6": {
+        "tf": 3,
+        "positions": [
+          70,
+          74,
+          79
+        ]
+      },
+      "7": {
+        "tf": 3,
+        "positions": [
+          31,
+          79,
+          81
+        ]
+      },
+      "8": {
+        "tf": 4,
+        "positions": [
+          31,
+          91,
+          95,
+          97
+        ]
+      }
+    },
+    "referee": {
+      "1": {
+        "tf": 2,
+        "positions": [
+          52,
+          56
+        ]
+      },
+      "2": {
+        "tf": 2,
+        "positions": [
+          46,
+          52
+        ]
+      },
+      "3": {
+        "tf": 2,
+        "positions": [
+          45,
+          50
+        ]
+      },
+      "4": {
+        "tf": 2,
+        "positions": [
+          44,
+          48
+        ]
+      },
+      "5": {
+        "tf": 2,
+        "positions": [
+          44,
+          48
+        ]
+      }
+    },
+    "final": {
+      "1": {
+        "tf": 2,
+        "positions": [
+          4,
+          6
+        ]
+      }
+    }
+  }
+}

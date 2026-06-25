@@ -1,0 +1,80 @@
+======================================================================
+        Information Retrieval System Evaluation Report
+======================================================================
+
+Evaluation Benchmark Queries Size: 15
+
+--- Global System Performance Overview ---
+  Mean Precision       : 0.5433  (54.3%)
+  Mean Recall          : 0.9933  (99.3%)
+  Mean F1-Score        : 0.6576
+  Mean Precision@5     : 0.7500
+  MAP (Mean Avg Prec)  : 0.9309
+  MRR (Mean Recip Rank): 0.9222
+
+----------------------------------------------------------------------
+--- Detailed Query Metrics Breakdown ---
+
+#   Query                               P       R       F1      AP      P@5   
+----------------------------------------------------------------------
+1   messi                               1.000   1.000   1.000   1.000   1.000 
+     Description: Matches featuring Lionel Messi
+     Relevant Count: 7  |  Retrieved Count: 7  |  Relevant Retrieved: 7
+
+2   mbappe goal                         0.400   1.000   0.571   1.000   0.800 
+     Description: Matches where Kylian Mbappe scored a goal
+     Relevant Count: 4  |  Retrieved Count: 10  |  Relevant Retrieved: 4
+
+3   final penalty                       0.100   1.000   0.182   1.000   0.200 
+     Description: Final match decided by penalty shootout
+     Relevant Count: 1  |  Retrieved Count: 10  |  Relevant Retrieved: 1
+
+4   own goal                            0.300   1.000   0.462   1.000   0.600 
+     Description: Matches with own goals recorded
+     Relevant Count: 3  |  Retrieved Count: 10  |  Relevant Retrieved: 3
+
+5   extra time goal                     0.500   1.000   0.667   1.000   1.000 
+     Description: Matches with goals scored during extra time
+     Relevant Count: 5  |  Retrieved Count: 10  |  Relevant Retrieved: 5
+
+6   yellow cards argentina              0.500   1.000   0.667   0.927   0.800 
+     Description: Matches where Argentina received yellow cards
+     Relevant Count: 5  |  Retrieved Count: 10  |  Relevant Retrieved: 5
+
+7   substitutions france                0.700   1.000   0.824   1.000   1.000 
+     Description: Matches where France made substitutions
+     Relevant Count: 7  |  Retrieved Count: 10  |  Relevant Retrieved: 7
+
+8   matches in lusail                   0.900   0.900   0.900   0.707   0.800 
+     Description: Matches played at Lusail Stadium
+     Relevant Count: 10  |  Retrieved Count: 10  |  Relevant Retrieved: 9
+
+9   referee marciniak                   0.300   1.000   0.462   1.000   0.600 
+     Description: Matches officiated by referee Szymon Marciniak
+     Relevant Count: 3  |  Retrieved Count: 10  |  Relevant Retrieved: 3
+
+10  captain luka modric                 0.700   1.000   0.824   1.000   1.000 
+     Description: Matches with Luka Modric playing as captain
+     Relevant Count: 7  |  Retrieved Count: 10  |  Relevant Retrieved: 7
+
+11  penalty miss                        0.600   1.000   0.750   1.000   1.000 
+     Description: Matches with missed penalty kicks
+     Relevant Count: 6  |  Retrieved Count: 10  |  Relevant Retrieved: 6
+
+12  red card                            0.200   1.000   0.333   0.417   0.400 
+     Description: Matches with red cards issued
+     Relevant Count: 2  |  Retrieved Count: 10  |  Relevant Retrieved: 2
+
+13  0-0 draw                            0.700   1.000   0.824   0.913   0.800 
+     Description: Matches ending in a scoreless 0-0 draw
+     Relevant Count: 7  |  Retrieved Count: 10  |  Relevant Retrieved: 7
+
+14  team:Portugal player:Goncalo Ramos  0.250   1.000   0.400   1.000   0.250 
+     Description: Matches with Goncalo Ramos playing for Portugal
+     Relevant Count: 1  |  Retrieved Count: 4  |  Relevant Retrieved: 1
+
+15  round:Semi-finals team:Morocco      1.000   1.000   1.000   1.000   1.000 
+     Description: Semi-final matches featuring Morocco
+     Relevant Count: 1  |  Retrieved Count: 1  |  Relevant Retrieved: 1
+
+======================================================================

@@ -1,0 +1,9 @@
+data==0.4
+decorator==5.3.1
+funcsigs==1.0.2
+modules==1.0.0
+numpy==2.5.0
+pandas==3.0.3
+python-dateutil==2.9.0.post0
+six==1.17.0
+tzdata==2026.2

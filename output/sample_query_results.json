@@ -1,0 +1,943 @@
+[
+  {
+    "query": "messi",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 44,
+        "score": 0.5951,
+        "match": "Argentina vs Mexico",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 1,
+        "score": 0.5291,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 16,
+        "score": 0.5251,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 4,
+        "doc_id": 4,
+        "score": 0.5184,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 0.4999,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  },
+  {
+    "query": "mbappe goal",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 13,
+        "score": 0.9127,
+        "match": "France vs Poland",
+        "stage": "Round of 16",
+        "result": "3–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 43,
+        "score": 0.878,
+        "match": "France vs Denmark",
+        "stage": "Group stage",
+        "result": "2–1"
+      },
+      {
+        "rank": 3,
+        "doc_id": 1,
+        "score": 0.7713,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 60,
+        "score": 0.7446,
+        "match": "France vs Australia",
+        "stage": "Group stage",
+        "result": "4–1"
+      },
+      {
+        "rank": 5,
+        "doc_id": 26,
+        "score": 0.5079,
+        "match": "Tunisia vs France",
+        "stage": "Group stage",
+        "result": "1–0"
+      }
+    ]
+  },
+  {
+    "query": "final penalty",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 1,
+        "score": 0.8383,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 2,
+        "doc_id": 6,
+        "score": 0.3541,
+        "match": "England vs France",
+        "stage": "Quarter-finals",
+        "result": "1–2"
+      },
+      {
+        "rank": 3,
+        "doc_id": 9,
+        "score": 0.3194,
+        "match": "Morocco vs Spain",
+        "stage": "Round of 16",
+        "result": "(3) 0–0 (0)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 7,
+        "score": 0.3185,
+        "match": "Croatia vs Brazil",
+        "stage": "Quarter-finals",
+        "result": "(4) 1–1 (2)"
+      },
+      {
+        "rank": 5,
+        "doc_id": 11,
+        "score": 0.3105,
+        "match": "Japan vs Croatia",
+        "stage": "Round of 16",
+        "result": "(1) 1–1 (3)"
+      }
+    ]
+  },
+  {
+    "query": "own goal",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 16,
+        "score": 0.5172,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 21,
+        "score": 0.509,
+        "match": "Canada vs Morocco",
+        "stage": "Group stage",
+        "result": "1–2"
+      },
+      {
+        "rank": 3,
+        "doc_id": 23,
+        "score": 0.4918,
+        "match": "Costa Rica vs Germany",
+        "stage": "Group stage",
+        "result": "2–4"
+      },
+      {
+        "rank": 4,
+        "doc_id": 29,
+        "score": 0.2421,
+        "match": "Ecuador vs Senegal",
+        "stage": "Group stage",
+        "result": "1–2"
+      },
+      {
+        "rank": 5,
+        "doc_id": 47,
+        "score": 0.2289,
+        "match": "Netherlands vs Ecuador",
+        "stage": "Group stage",
+        "result": "1–1"
+      }
+    ]
+  },
+  {
+    "query": "extra time goal",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 7,
+        "score": 0.7127,
+        "match": "Croatia vs Brazil",
+        "stage": "Quarter-finals",
+        "result": "(4) 1–1 (2)"
+      },
+      {
+        "rank": 2,
+        "doc_id": 11,
+        "score": 0.6949,
+        "match": "Japan vs Croatia",
+        "stage": "Round of 16",
+        "result": "(1) 1–1 (3)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 9,
+        "score": 0.6449,
+        "match": "Morocco vs Spain",
+        "stage": "Round of 16",
+        "result": "(3) 0–0 (0)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 1,
+        "score": 0.6362,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 0.5916,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  },
+  {
+    "query": "yellow cards argentina",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 44,
+        "score": 1.0161,
+        "match": "Argentina vs Mexico",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 4,
+        "score": 1.0064,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 28,
+        "score": 0.9969,
+        "match": "Poland vs Argentina",
+        "stage": "Group stage",
+        "result": "0–2"
+      },
+      {
+        "rank": 4,
+        "doc_id": 16,
+        "score": 0.8653,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 0.8579,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  },
+  {
+    "query": "substitutions france",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 6,
+        "score": 0.9137,
+        "match": "England vs France",
+        "stage": "Quarter-finals",
+        "result": "1–2"
+      },
+      {
+        "rank": 2,
+        "doc_id": 3,
+        "score": 0.9134,
+        "match": "France vs Morocco",
+        "stage": "Semi-finals",
+        "result": "2–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 43,
+        "score": 0.8886,
+        "match": "France vs Denmark",
+        "stage": "Group stage",
+        "result": "2–1"
+      },
+      {
+        "rank": 4,
+        "doc_id": 13,
+        "score": 0.8628,
+        "match": "France vs Poland",
+        "stage": "Round of 16",
+        "result": "3–1"
+      },
+      {
+        "rank": 5,
+        "doc_id": 26,
+        "score": 0.8601,
+        "match": "Tunisia vs France",
+        "stage": "Group stage",
+        "result": "1–0"
+      }
+    ]
+  },
+  {
+    "query": "matches in lusail",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 2,
+        "score": 0.6195,
+        "match": "Croatia vs Morocco",
+        "stage": "Third-place match",
+        "result": "2–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 52,
+        "score": 0.4061,
+        "match": "Brazil vs Serbia",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 19,
+        "score": 0.3918,
+        "match": "Cameroon vs Brazil",
+        "stage": "Group stage",
+        "result": "1–0"
+      },
+      {
+        "rank": 4,
+        "doc_id": 44,
+        "score": 0.3788,
+        "match": "Argentina vs Mexico",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 5,
+        "doc_id": 36,
+        "score": 0.3776,
+        "match": "Portugal vs Uruguay",
+        "stage": "Group stage",
+        "result": "2–0"
+      }
+    ]
+  },
+  {
+    "query": "referee marciniak",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 43,
+        "score": 0.4506,
+        "match": "France vs Denmark",
+        "stage": "Group stage",
+        "result": "2–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 16,
+        "score": 0.4431,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 3,
+        "doc_id": 1,
+        "score": 0.3591,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 48,
+        "score": 0.1586,
+        "match": "England vs United States",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 5,
+        "doc_id": 53,
+        "score": 0.1533,
+        "match": "Morocco vs Croatia",
+        "stage": "Group stage",
+        "result": "0–0"
+      }
+    ]
+  },
+  {
+    "query": "captain luka modric",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 39,
+        "score": 1.0746,
+        "match": "Croatia vs Canada",
+        "stage": "Group stage",
+        "result": "4–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 4,
+        "score": 0.9414,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 7,
+        "score": 0.8968,
+        "match": "Croatia vs Brazil",
+        "stage": "Quarter-finals",
+        "result": "(4) 1–1 (2)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 11,
+        "score": 0.8744,
+        "match": "Japan vs Croatia",
+        "stage": "Round of 16",
+        "result": "(1) 1–1 (3)"
+      },
+      {
+        "rank": 5,
+        "doc_id": 53,
+        "score": 0.6935,
+        "match": "Morocco vs Croatia",
+        "stage": "Group stage",
+        "result": "0–0"
+      }
+    ]
+  },
+  {
+    "query": "penalty miss",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 6,
+        "score": 0.8161,
+        "match": "England vs France",
+        "stage": "Quarter-finals",
+        "result": "1–2"
+      },
+      {
+        "rank": 2,
+        "doc_id": 59,
+        "score": 0.5864,
+        "match": "Mexico vs Poland",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 56,
+        "score": 0.5308,
+        "match": "Belgium vs Canada",
+        "stage": "Group stage",
+        "result": "1–0"
+      },
+      {
+        "rank": 4,
+        "doc_id": 28,
+        "score": 0.5225,
+        "match": "Poland vs Argentina",
+        "stage": "Group stage",
+        "result": "0–2"
+      },
+      {
+        "rank": 5,
+        "doc_id": 42,
+        "score": 0.5114,
+        "match": "Poland vs Saudi Arabia",
+        "stage": "Group stage",
+        "result": "2–0"
+      }
+    ]
+  },
+  {
+    "query": "red card",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 19,
+        "score": 0.4622,
+        "match": "Cameroon vs Brazil",
+        "stage": "Group stage",
+        "result": "1–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 5,
+        "score": 0.4514,
+        "match": "Morocco vs Portugal",
+        "stage": "Quarter-finals",
+        "result": "1–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 45,
+        "score": 0.4385,
+        "match": "Wales vs IR Iran",
+        "stage": "Group stage",
+        "result": "0–2"
+      },
+      {
+        "rank": 4,
+        "doc_id": 34,
+        "score": 0.3972,
+        "match": "Korea Republic vs Ghana",
+        "stage": "Group stage",
+        "result": "2–3"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 0.3433,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  },
+  {
+    "query": "0-0 draw",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 48,
+        "score": 0.2249,
+        "match": "England vs United States",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 53,
+        "score": 0.2174,
+        "match": "Morocco vs Croatia",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 22,
+        "score": 0.2166,
+        "match": "Croatia vs Belgium",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 4,
+        "doc_id": 59,
+        "score": 0.2131,
+        "match": "Mexico vs Poland",
+        "stage": "Group stage",
+        "result": "0–0"
+      },
+      {
+        "rank": 5,
+        "doc_id": 47,
+        "score": 0.2107,
+        "match": "Netherlands vs Ecuador",
+        "stage": "Group stage",
+        "result": "1–1"
+      }
+    ]
+  },
+  {
+    "query": "mbappe AND goal",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 13,
+        "score": 0.9127,
+        "match": "France vs Poland",
+        "stage": "Round of 16",
+        "result": "3–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 43,
+        "score": 0.878,
+        "match": "France vs Denmark",
+        "stage": "Group stage",
+        "result": "2–1"
+      },
+      {
+        "rank": 3,
+        "doc_id": 1,
+        "score": 0.7713,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 60,
+        "score": 0.7446,
+        "match": "France vs Australia",
+        "stage": "Group stage",
+        "result": "4–1"
+      },
+      {
+        "rank": 5,
+        "doc_id": 26,
+        "score": 0.5079,
+        "match": "Tunisia vs France",
+        "stage": "Group stage",
+        "result": "1–0"
+      }
+    ]
+  },
+  {
+    "query": "penalty AND quarter-finals",
+    "result_count": 4,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 6,
+        "score": 1.3262,
+        "match": "England vs France",
+        "stage": "Quarter-finals",
+        "result": "1–2"
+      },
+      {
+        "rank": 2,
+        "doc_id": 7,
+        "score": 1.193,
+        "match": "Croatia vs Brazil",
+        "stage": "Quarter-finals",
+        "result": "(4) 1–1 (2)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 8,
+        "score": 1.0068,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 4,
+        "score": 0.5956,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      }
+    ]
+  },
+  {
+    "query": "messi AND NOT penalty",
+    "result_count": 2,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 44,
+        "score": 0.5951,
+        "match": "Argentina vs Mexico",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 16,
+        "score": 0.5251,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      }
+    ]
+  },
+  {
+    "query": "argentina AND final",
+    "result_count": 1,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 1,
+        "score": 1.1214,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      }
+    ]
+  },
+  {
+    "query": "morocco AND semi",
+    "result_count": 1,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 3,
+        "score": 1.3737,
+        "match": "France vs Morocco",
+        "stage": "Semi-finals",
+        "result": "2–0"
+      }
+    ]
+  },
+  {
+    "query": "team:Argentina round:Final",
+    "result_count": 3,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 8,
+        "score": 0.0,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      },
+      {
+        "rank": 2,
+        "doc_id": 1,
+        "score": 0.0,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 4,
+        "score": 0.0,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      }
+    ]
+  },
+  {
+    "query": "round:Semi-finals team:Morocco",
+    "result_count": 1,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 3,
+        "score": 0.0,
+        "match": "France vs Morocco",
+        "stage": "Semi-finals",
+        "result": "2–0"
+      }
+    ]
+  },
+  {
+    "query": "team:Portugal player:Goncalo Ramos",
+    "result_count": 4,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 10,
+        "score": 0.748,
+        "match": "Portugal vs Switzerland",
+        "stage": "Round of 16",
+        "result": "6–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 5,
+        "score": 0.2519,
+        "match": "Morocco vs Portugal",
+        "stage": "Quarter-finals",
+        "result": "1–0"
+      },
+      {
+        "rank": 3,
+        "doc_id": 36,
+        "score": 0.2486,
+        "match": "Portugal vs Uruguay",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 4,
+        "doc_id": 51,
+        "score": 0.2346,
+        "match": "Portugal vs Ghana",
+        "stage": "Group stage",
+        "result": "3–2"
+      }
+    ]
+  },
+  {
+    "query": "referee:\"Szymon Marciniak\"",
+    "result_count": 3,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 16,
+        "score": 0.0,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 2,
+        "doc_id": 1,
+        "score": 0.0,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 43,
+        "score": 0.0,
+        "match": "France vs Denmark",
+        "stage": "Group stage",
+        "result": "2–1"
+      }
+    ]
+  },
+  {
+    "query": "\"extra time goal\"",
+    "result_count": 0,
+    "top_results": []
+  },
+  {
+    "query": "\"penalty shootout\"",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 9,
+        "score": 2.7562,
+        "match": "Morocco vs Spain",
+        "stage": "Round of 16",
+        "result": "(3) 0–0 (0)"
+      },
+      {
+        "rank": 2,
+        "doc_id": 7,
+        "score": 2.754,
+        "match": "Croatia vs Brazil",
+        "stage": "Quarter-finals",
+        "result": "(4) 1–1 (2)"
+      },
+      {
+        "rank": 3,
+        "doc_id": 11,
+        "score": 2.7351,
+        "match": "Japan vs Croatia",
+        "stage": "Round of 16",
+        "result": "(1) 1–1 (3)"
+      },
+      {
+        "rank": 4,
+        "doc_id": 1,
+        "score": 2.7165,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 2.6494,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  },
+  {
+    "query": "\"Lionel Messi\"",
+    "result_count": 5,
+    "top_results": [
+      {
+        "rank": 1,
+        "doc_id": 44,
+        "score": 3.2459,
+        "match": "Argentina vs Mexico",
+        "stage": "Group stage",
+        "result": "2–0"
+      },
+      {
+        "rank": 2,
+        "doc_id": 16,
+        "score": 3.1222,
+        "match": "Argentina vs Australia",
+        "stage": "Round of 16",
+        "result": "2–1"
+      },
+      {
+        "rank": 3,
+        "doc_id": 4,
+        "score": 3.1078,
+        "match": "Argentina vs Croatia",
+        "stage": "Semi-finals",
+        "result": "3–0"
+      },
+      {
+        "rank": 4,
+        "doc_id": 1,
+        "score": 3.0951,
+        "match": "Argentina vs France",
+        "stage": "Final",
+        "result": "(4) 3–3 (2)"
+      },
+      {
+        "rank": 5,
+        "doc_id": 8,
+        "score": 3.0643,
+        "match": "Netherlands vs Argentina",
+        "stage": "Quarter-finals",
+        "result": "(3) 2–2 (4)"
+      }
+    ]
+  }
+]
