@@ -3,8 +3,6 @@ import re
 import unicodedata
 from typing import List
 
-
-
 STOP_WORDS = {
     'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
     'of', 'with', 'by', 'from', 'is', 'was', 'are', 'were', 'be', 'been',
@@ -43,7 +41,6 @@ def normalize_case(text: str) -> str:
 
 
 def remove_punctuation(text: str) -> str:
-
     text = re.sub(r'-', ' ', text)
     text = re.sub(r"[^\w\s']", ' ', text)
     text = re.sub(r"'", '', text)
@@ -94,4 +91,5 @@ def preprocess(text: str, apply_stop_words: bool = True) -> List[str]:
 
 
 def preprocess_query(query: str, apply_stop_words: bool = False) -> List[str]:
+
     return preprocess(query, apply_stop_words=apply_stop_words)
