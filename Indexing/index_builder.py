@@ -2,7 +2,7 @@
 import math
 from collections import defaultdict
 from typing import List, Dict, Tuple
-from dataPreprocessing.preprocessor import preprocess
+from DataPreprocessing.preprocessor import preprocess
 
 
 class InvertedIndex:
@@ -62,7 +62,7 @@ class InvertedIndex:
 
     def idf(self, term: str) -> float:
 
-        from dataPreprocessing.preprocessor import preprocess as pp
+        from DataPreprocessing.preprocessor import preprocess as pp
         normalized = pp(term, apply_stop_words=False)
         if not normalized:
             return 0.0
@@ -73,7 +73,7 @@ class InvertedIndex:
         return math.log((self.total_docs + 1) / (df + 1)) + 1
 
     def tf(self, term: str, doc_id: int) -> int:
-        from dataPreprocessing.preprocessor import preprocess as pp
+        from DataPreprocessing.preprocessor import preprocess as pp
         normalized = pp(term, apply_stop_words=False)
         if not normalized:
             return 0
@@ -81,7 +81,7 @@ class InvertedIndex:
         return self.index.get(t, {}).get(doc_id, {}).get('tf', 0)
 
     def get_positions(self, term: str, doc_id: int) -> List[int]:
-        from dataPreprocessing.preprocessor import preprocess as pp
+        from DataPreprocessing.preprocessor import preprocess as pp
         normalized = pp(term, apply_stop_words=False)
         if not normalized:
             return []
@@ -113,7 +113,7 @@ class InvertedIndex:
 
         if not phrase_terms:
             return False
-        from dataPreprocessing.preprocessor import preprocess as pp
+        from DataPreprocessing.preprocessor import preprocess as pp
         norm_terms = []
         for t in phrase_terms:
             n = pp(t, apply_stop_words=False)

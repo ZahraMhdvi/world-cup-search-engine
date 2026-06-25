@@ -1,8 +1,8 @@
 
 import re
 from typing import List, Set, Tuple
-from dataPreprocessing.preprocessor import preprocess, preprocess_query
-from indexing.index_builder import InvertedIndex
+from DataPreprocessing.preprocessor import preprocess, preprocess_query
+from Indexing.index_builder import InvertedIndex
 
 
 
